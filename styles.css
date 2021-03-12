@@ -1,0 +1,30 @@
+body {
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    margin-left: 0px;
+    padding-top: 0px;
+    color: white;
+    height: 25px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 10px;
+
+
+}
+
+.title {
+    text-align: center;
+    margin-right: auto;
+    margin-left: -10px;
+    
+}
+
