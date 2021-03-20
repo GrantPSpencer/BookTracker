@@ -23,22 +23,56 @@
     </header>
     
     <div id='page-wrapper'>
-        <div id ='booklist-wrapper'>
-            <section class='booklist'>
-                <p>test 1</p>
-                <p>test 2</p>
-                <p>text 3</p>
+        
+        <div id ='sidebar-wrapper'>
+            
+            <div id='searchbar-wrapper'>
+
+                <!-- <div name ='filter-wrapper'> -->
+                    <div id='filter-wrapper'><label for='booklist-filter'>Show Books</label>
+                    <select name='booklist-filter' id='booklist-filter'>
+                        <option value='past-books'>Past Books</option>
+                        <option value='current-books' selected='selected'>Current Books</option>
+                        <option value='future-books'>Future Books</option>
+                        <option value='all-books '>All Books</option>
+                    </select>
+                </div>
+                <div id='searchbar'>
+                    <!-- drop down filter menu -->
+                    <select name='search-filter' id='search-filter'>
+                        <option value="author" selected='selected'>Author</option>
+                        <option value="title">Title</option>
+                        <option value="tag">Tag</option>
+                    </select>
+                    <form id='searchbar-textfield-container'>
+                        <input class='searchbar-textfield' type='text' placeholder='     Search...'>
+                        <img src='icons/search-24px.svg'>
+                        <button type='submit' class='search-submit'>Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <section id='booklist'>
+                    <div>booklist 1</div>
+                    <div>booklist 2</div>
+                    <div>booklist 3</div>
             </section>
         </div>
+
         <div id = 'book-info-wrapper'>
+
             <div id='title-container'>
                 <p>Title of the Book</p>
             </div>
+
             <section id ='book-info' >
                 <p class='authors'>Ezra F Vogel</p>
             </section>
+
         </div>
+
     </div>
+        
     
 </body>
 </html>

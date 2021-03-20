@@ -47,14 +47,73 @@ header {
     text-align: center;
 }
 
-#booklist-wrapper {
+#sidebar-wrapper {
     display: flex;
     height: 100%;
     min-width: 100px;
     flex-grow: 0;
     flex-shrink: 0;
     border: solid 1px red;
+    flex-direction: column;
 }
+
+#searchbar-wrapper {
+    min-width: 100%;
+}
+
+#filter-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#booklist-filter {
+    text-align-last: center;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+
+#filter-wrapper > label {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#searchbar {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    display: flex;
+}
+
+#search-filter {
+    font-weight: bold;
+}
+
+#searchbar-text-field-container {
+    /* position: relative; */
+}
+
+#searchbar-textfield-container > img {
+    position: absolute;
+    left: 73px;
+    bottom: 439px;
+    opacity: 40%;
+    pointer-events: none;
+
+}
+
+
+#booklist {
+    min-width: 100%;
+}
+
+
+#booklist > div {
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
 
 #book-info-wrapper {
     display: flex;
