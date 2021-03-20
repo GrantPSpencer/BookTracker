@@ -91,13 +91,12 @@ header {
 }
 
 #searchbar-text-field-container {
-    /* position: relative; */
+    position: relative;
 }
 
 #searchbar-textfield-container > img {
     position: absolute;
     left: 73px;
-    bottom: 439px;
     opacity: 40%;
     pointer-events: none;
 
