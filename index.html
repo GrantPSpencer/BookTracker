@@ -53,7 +53,7 @@
             </div>
 
             <section id='booklist'>
-                    <div class = 'booklist-book'> 
+                    <!-- <div class = 'booklist-book'> 
                         <img class='book-thumbnail'>
                         <div class = 'booklist-book-info'>
                             <p><b>Deng Xiaoping and the Transforming of China</b></p>
@@ -107,10 +107,9 @@
                             <p><b>Deng Xiaoping and the Transforming of China</b></p>
                             <p>Ezra F. Vogel</p>
                         </div>
-                        
-                    </div>
-                    <div>booklist 2</div>
-                    <div>booklist 3</div>
+                    </div> -->
+
+
             </section>
         </div>
 
@@ -119,29 +118,87 @@
             <div id='title-container'>
                 <p>Deng Xiaoping and the Transforming of China</p>
             </div>
+            <div id='book-info-container'>
+                <section id ='book-info' >
+                    <div id='book-details'>
+                        <img id='book-cover'>
+                        <p class='authors'>Ezra F Vogel</p>
+                        <p class='book-summary'>A concise examination of the different meanings of slow reading. <br>
 
-            <section id ='book-info' >
-                
-                <div id='book-details'>
-                    <img id='book-cover'>
-                    <p class='authors'>Ezra F Vogel</p>
-                    <p class='book-summary'>A concise examination of the different meanings of slow reading. <br>
+                            In the face of ever-increasing demands for speed-reading of volumes of information fragments, some readers are choosing to slow down. While it often seems necessary to read quickly, many readers share a conviction that reading slowly is essential to enjoyment and comprehension.
+                            <br><br>The involuntary practice of slow reading has been a subject of much research, but little is known about the voluntary practice. Slow Reading examines the research, from the earliest references in religion and philosophy, to the practice of close reading in the humanities, and the recent swell of interest associated with the Slow Movement. It looks at the diverse angles from which slow reading has been approached in education, library sciences and media studies. Research in psychology and neurophysiology provides a tentative explanation for the ongoing role of slow reading.
+                            <br><br>Slow Reading brings attention to emerging ideas in technology and culture. The traditional technologies of print and the book have persisted as part of our information ecology because of the need for slow reading and deep comprehension. The theme of locality in the Slow Movement provides insight into the importance of physical location in our relationship with information. Most of all, Slow Reading represents a rediscovery of the pleasure of reading for its own sake.
+                            <br><br>Slow Reading brings attention to emerging ideas in technology and culture. The traditional technologies of print and the book have persisted as part of our information ecology because of the need for slow reading and deep comprehension. The theme of locality in the Slow Movement provides insight into the importance of physical location in our relationship with information. Most of all, Slow Reading represents a rediscovery of the pleasure of reading for its own sake.
+                            <br><br>Slow Reading brings attention to emerging ideas in technology and culture. The traditional technologies of print and the book have persisted as part of our information ecology because of the need for slow reading and deep comprehension. The theme of locality in the Slow Movement provides insight into the importance of physical location in our relationship with information. Most of all, Slow Reading represents a rediscovery of the pleasure of reading for its own sake.
+                        </p>
+                    </div>
+                    <div id='status-tags-form'>
+                        
+                        <div id='reading-status-form'>
+                            <label for='reading-status'>Reading Status</label>
+                            <br>
+                            <select name='reading-status' id='booklist-status'>
+                                <option value="past-book">I've Read This</option>
+                                <option value="current-book">I'm Reading This</option>
+                                <option value="future-book">I Will Read This</option>
+                            </select>
+                        </div>
+                       
+                        <form id='add-tags-form'>
+                            <label for='tag-name'>Add Tag</label>
+                            <br>
+                            <input type='text' class='add-tags-input' placeholder="Tag Name...">
+                            <button type='submit' class='form-submit'>Add</button>
+                        </form>
 
-                        In the face of ever-increasing demands for speed-reading of volumes of information fragments, some readers are choosing to slow down. While it often seems necessary to read quickly, many readers share a conviction that reading slowly is essential to enjoyment and comprehension.
-                        <br><br>The involuntary practice of slow reading has been a subject of much research, but little is known about the voluntary practice. Slow Reading examines the research, from the earliest references in religion and philosophy, to the practice of close reading in the humanities, and the recent swell of interest associated with the Slow Movement. It looks at the diverse angles from which slow reading has been approached in education, library sciences and media studies. Research in psychology and neurophysiology provides a tentative explanation for the ongoing role of slow reading.
-                        <br><br>Slow Reading brings attention to emerging ideas in technology and culture. The traditional technologies of print and the book have persisted as part of our information ecology because of the need for slow reading and deep comprehension. The theme of locality in the Slow Movement provides insight into the importance of physical location in our relationship with information. Most of all, Slow Reading represents a rediscovery of the pleasure of reading for its own sake.</p>
-                </div>
-                <div id='book-tags'>
-                    <span class='tag'>tag 1</span>
-                    <span class='tag'>tag 2</span>
-                    <span class='tag'>tag 3</span>
-                </div>
-            </section>
+                    </div>
+
+                    <div id='book-tags'>
+                        <div class='tag'> 
+                            <button class='remove-tag'>x</button>
+                            tag 1
+                        </div>
+                        <div class='tag'> 
+                            <button class='remove-tag'>x</button>
+                            tag 2
+                        </div>
+                        <div class='tag'> 
+                            <button class='remove-tag'>x</button>
+                            tag 3
+                        </div>
+                    </div>
+                </section>
+        </div>
 
         </div>
 
     </div>
         
+    <!-- <div id='add-book-window'>
+        <div id='isbn-search-wrapper'>
+            <button id='remove-book-window'>x</button>
+            <label for='isbn-search'>Search Book By ISBN</label>
+            <br>
+            <form id='isbn-search'>
+                <input id='isbn-searchbar' type='text' placeholder='ISBN (eg., 9780674055445'>
+                <button type='submit' class='search-submit'>Search</button>
+            </form>
+        </div>
+        <div id='new-book-wrapper'>
+            <img src='Images/example-cover.jpeg'>
+            <div id='new-book-info'>
+                <p><b>Deng Xiaoping and the Transforming of China</b></p>
+                <p>Ezra F. Vogel</p>
+                <div id='new-book-confirmation'>
+                    <span>Is this the correct book?</span>
+                    <button id='new-book-no'>No</button>
+                    <button id='new-book-yes'>Yes</button>
+                </div>
+            </div>
+        </div> -->
+
+        
+    </div>
     <script src='script.js'></script>
 </body>
 
