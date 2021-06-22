@@ -1,51 +1,61 @@
 'use strict'
 
+//get authors
 
-//get booklist thumbnails
-async function getThumbnail() {
-    let responsejson = await fetch('https://openlibrary.org/api/books?bibkeys=ISBN:9780980200447&jscmd=data&format=json');
+async function getAuthors(isbn) {
+    let url = 'https://openlibrary.org/api/books?bibkeys=ISBN:'+String(isbn)+'&jscmd=data&format=json';
+    let responsejson = await fetch(url)
     let response = await responsejson.json();
 
-    let isbn = Object.keys(response)[0];
+    isbn = Object.keys(response)[0];
+    let authorlist = response[isbn].authors;
 
-    let cover = response[isbn].cover.medium;
+    let authors_array = [];
+    let authors = '';
 
-    cover = String(cover);
-
-    let images = document.getElementsByClassName('book-thumbnail');
-    
-    for (let image of images) {
-        image.src = cover;
+    for (let i = 0; i < authorlist.length; i++) {
+        authors_array.push(authorlist[i].name);
     }
 
-    return cover;
-
+    if (authors_array.length == 1) {
+        authors = authors_array[0];
+         return authors;
+    } else {
+        authors = authors_array.slice(0, authors_array.length - 1).join(', ');
+        authors += ' and ' + authors_array[authors_array.length - 1];
+        return authors;
+    }
+      
 }
 
-getThumbnail();
-
-
-// get large book cover
-async function getBookCover() {
-    let responsejson = await fetch('https://openlibrary.org/api/books?bibkeys=ISBN:9780980200447&jscmd=data&format=json');
+//get cover url
+async function getCover(isbn, size) {
+    let url = 'https://openlibrary.org/api/books?bibkeys=ISBN:'+String(isbn)+'&jscmd=data&format=json';
+    let responsejson = await fetch(url)
     let response = await responsejson.json();
 
-    let isbn = Object.keys(response)[0];
+    isbn = Object.keys(response)[0];
 
-    let cover = response[isbn].cover.large;
+    let cover;
+    size = size.toLowerCase();
+    switch (size) {
+        case 0:
+        case 'small':
+            cover = response[isbn].cover.small;
+            break;
+        case 1:
+        case 'medium':
+            cover = response[isbn].cover.small;
+            break;
+        case 2:
+        case 'large':
+            cover = response[isbn].cover.small;
+    }
 
-    cover = String(cover);
+   return cover;
 
-    let image = document.getElementById('book-cover');
-    image.src = cover;
-
-    return cover;
+      
 }
-
-getBookCover();
-
-
-
 
 
 // highlight booklist books when clicked
