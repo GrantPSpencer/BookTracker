@@ -260,6 +260,7 @@ header {
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 15px;
 }
 
 #status-tags-form {
@@ -338,11 +339,11 @@ header {
 }
 
 
-#new-book-wrapper {
+#isbn-search-results {
     display: flex;;
 }
 
-#new-book-wrapper img {
+#isbn-search-results img {
     height: 150px;
     width: 96px;
     padding: 20px;

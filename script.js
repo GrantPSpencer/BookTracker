@@ -87,28 +87,6 @@ add_book_button.appendChild(add_phrase);
 booklist.appendChild(add_book_button);
 
 
-
-//create popup add book window
-/* <div id='add-book-window'>
-<div id='isbn-search-wrapper'>
-    <button class='remove-book-window'>x</button>
-    <label for='isbn-search'>Search Book By ISBN</label>
-    <br>
-    <input id='isbn-search' type='text' placeholder='ISBN (eg., 9780674055445'>
-</div>
-<div id='new-book-wrapper'>
-    <img src='Images/example-cover.jpeg'>
-    <div id='new-book-info'>
-        <p><b>Deng Xiaoping and the Transforming of China</b></p>
-        <p>Ezra F. Vogel</p>
-        <div id='new-book-confirmation'>
-            <span>Is this the correct book?</span>
-            <button id='new-book-no'>No</button>
-            <button id='new-book-yes'>Yes</button>
-        </div>
-    </div>
-</div> */
-
 let add_book_window = document.createElement('div');
 add_book_window.setAttribute('id','add-book-window');
 
@@ -124,7 +102,18 @@ add_book_window.innerHTML = `        <div id='isbn-search-wrapper'>
 
 
 
-
+let isbn_search_results = document.createElement('div');
+isbn_search_results.setAttribute('id', 'isbn-search-results');
+isbn_search_results.innerHTML = `    <div id='isbn-search-results'>
+<img id = 'isbn-search-results-cover' src=''>
+<div id='new-book-info'>
+    <div id='new-book-confirmation'>
+        <span>Is this the correct book?</span>
+        <button id='new-book-no'>No</button>
+        <button id='new-book-yes'>Yes</button>
+    </div>
+</div>
+`
 
 
 
@@ -144,7 +133,7 @@ add_book_window.innerHTML = `        <div id='isbn-search-wrapper'>
 // }
 
 
-add_book_button.onclick = function() {
+add_book_button.onclick = function(event) {
     document.body.appendChild(add_book_window);
     let remove_book_window = document.getElementById('remove-book-window');
     remove_book_window.onclick = function() {
@@ -158,10 +147,41 @@ add_book_button.onclick = function() {
         let input = document.getElementById('isbn-searchbar');
         let isbn = input.value;
         let url = 'https://openlibrary.org/api/books?bibkeys=ISBN:'+String(isbn)+'&jscmd=data&format=json';
-        alert(url);
-        fetchISBN(url);
-        event.preventDefault();
+        
+        let responsejson = await fetch(url);
+        let response = await responsejson.json();
+
+        isbn = Object.keys(response)[0];
+        let thumbnail = response[isbn.cover.small]
+        thumnail = String(thumbnail);
+
+        let image = document.getElementById('isbn-search-results-cover');
+        image.src = thumbnail;
+
+        add_book_window.appendChild(isbn_search_results);
+        
+        
     }
+
+ 
+        
+
+
+
+    //create popup add book window
+/*
+<div id='isbn_search_details'>
+    <img id = 'src=''>
+    <div id='new-book-info'>
+        <p><b>Deng Xiaoping and the Transforming of China</b></p>
+        <p>Ezra F. Vogel</p>
+        <div id='new-book-confirmation'>
+            <span>Is this the correct book?</span>
+            <button id='new-book-no'>No</button>
+            <button id='new-book-yes'>Yes</button>
+        </div>
+    </div>
+</div> */
 
     async function fetchISBN(url) {
         let responsejson = await fetch(url);
@@ -180,7 +200,7 @@ add_book_button.onclick = function() {
 
     }
     
-    
+    event.preventDefault();
     // isbn_search_form.onsubmit = function(event) {
     //     let input = document.getElementById('isbn-searchbar');
     //     let isbn = input.value;
